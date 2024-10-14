@@ -86,7 +86,7 @@
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
             Send a Message
         </button>
-        <a id="downloadCV" class="btn btn-primary" download>
+        <a href="assets/cv.pdf" class="btn btn-primary" target="_blank">
             Download My CV
         </a>
         <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -125,5 +125,31 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="scripts/script.js"></script>
     <script src="./dist/bundle.js"></script>
+    <script>
+        const themeToggleButton = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme === 'light') {
+    document.body.classList.add('light-theme');
+}
+
+themeToggleButton.addEventListener('click', function () {
+    document.body.classList.toggle('light-theme');
+    
+    let theme = 'dark';
+    if (document.body.classList.contains('light-theme')) {
+        theme = 'light';
+    }
+    localStorage.setItem('theme', theme);
+});
+
+// Menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+menuToggle.addEventListener('click', function () {
+    navMenu.classList.toggle('show');
+});
+    </script>
 </body>
 </html>

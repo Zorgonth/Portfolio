@@ -118,31 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-// Theme toggle
-const themeToggleButton = document.getElementById('theme-toggle');
-const currentTheme = localStorage.getItem('theme');
 
-if (currentTheme === 'light') {
-    document.body.classList.add('light-theme');
-}
-
-themeToggleButton.addEventListener('click', function () {
-    document.body.classList.toggle('light-theme');
-    
-    let theme = 'dark';
-    if (document.body.classList.contains('light-theme')) {
-        theme = 'light';
-    }
-    localStorage.setItem('theme', theme);
-});
-
-// Menu toggle
-const menuToggle = document.getElementById('menu-toggle');
-const navMenu = document.getElementById('nav-menu');
-
-menuToggle.addEventListener('click', function () {
-    navMenu.classList.toggle('show');
-});
 
 const navLinks = document.querySelectorAll('#nav-menu a');
 

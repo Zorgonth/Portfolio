@@ -1,9 +1,10 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "main": "script.js",
+  "description": "My Portfolio Website",
+  "main": "main.js",
   "scripts": {
-    "build": "webpack --config scripts/webpack.config.js"
+      "build": "webpack --config js/webpack.config.js"
   },
   "dependencies": {},
   "devDependencies": {
@@ -11,3 +12,4 @@
     "webpack-cli": "^4.0.0"
   }
 }
+

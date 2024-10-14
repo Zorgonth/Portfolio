@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website showcasing my GitHub projects.">
+    <title>Al-zubaidi Saadoun - Portfolio</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="centered-text">
+        <h1><span class="highlight">Saadoun</span> <span class="highlight">Al-Zubaidi</span></h1>
+        <button id="menu-toggle" class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="nav-menu" class="hidden">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div id="theme-toggle" class="theme-toggle">
+            <div class="toggle-slider">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+            </div>
+        </div>
+    </header>
+    <section id="about" class="my-section centered-text">
+        <div class="about-container">
+            <div class="about-left">
+                <div class="profile-container">
+                    <img src="assets/my_pic2.jpg" alt="Saadoun Al-zubaidi" class="profile-picture">
+                    <p>Hi, I'm Saadoun Al-zubaidi, a passionate developer who is always eager to learn and grow. I thrive on the challenges of exploring new technologies and continuously improving my skills. My motivation stems from a desire to build meaningful and impactful solutions, always striving for excellence in everything I create. With a strong drive for innovation and a commitment to staying current in the ever-evolving tech world, I am constantly pushing myself to take on new projects and expand my horizons.</p>
+                </div>
+            </div>
+            <div class="about-right">
+                <h3 style="margin-bottom: 30px;">Skills & Tools</h3>
+                <div class="skills-container">
+                    <ul class="column">
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML Logo" class="skill-logo"> HTML</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS Logo" class="skill-logo"> CSS</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Logo" class="skill-logo"> JavaScript</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo" class="skill-logo"> Python</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js Logo" class="skill-logo"> Vue.js</li> <!-- Added Vue.js -->
+                    </ul>
+                    
+                    <ul class="column">
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C Logo" class="skill-logo"> C</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ Logo" class="skill-logo"> C++</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go Logo" class="skill-logo"> Go</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Logo" class="skill-logo"> React.js</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap Logo" class="skill-logo"> Bootstrap</li> <!-- Added Bootstrap -->
+                    </ul>
+                    
+                    <ul class="column">
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js Logo" class="skill-logo"> Node.js</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django Logo" class="skill-logo"> Django</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker Logo" class="skill-logo"> Docker</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS Logo" class="skill-logo"> AWS</li>
+                        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL Logo" class="skill-logo"> MySQL</li> <!-- Added MySQL -->
+                    </ul>
+                </div>
+            </div>  
+        </div>
+    </section>
+    
+
+    <section id="projects" class="section centered-text" style="color: black;">
+        <h2>Projects</h2>
+        <div id="projects-container">
+        </div>
+    </section>
+
+    <section id="contact" class="section centered-text">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out through any of the platforms below!</p>
+        <div class="social-icons">
+            <a href="https://github.com/zorgonth" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/saadoun-al-zubaidi" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:alzubaidisadooon@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
+            Send a Message
+        </button>
+        <a id="downloadCV" class="btn btn-primary" download>
+            Download My CV
+        </a>
+        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalLabel">Send a Message</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="centered-text">
+        <p>&copy; 2024 Saadoun Al-zubaidi. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

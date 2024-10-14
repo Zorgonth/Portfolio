@@ -1,6 +1,6 @@
 const username = "Zorgonth";
-const token = process.env.GITHUBTOKEN; // Using the environment variable for GitHub token
 
+const token = process.env.GITHUBTOKEN;
 fetch(`https://api.github.com/users/${username}/repos`, {
   headers: {
     Authorization: `token ${token}`
@@ -25,7 +25,7 @@ fetch(`https://api.github.com/users/${username}/repos`, {
 
     return fetch(`https://api.github.com/repos/${username}/${repo.name}/readme`, {
       headers: {
-        Authorization: `token ${token}` // Using the environment variable for GitHub token
+        Authorization: `token ${token}`
       }
     })
     .then(response => {
@@ -160,13 +160,12 @@ navLinks.forEach(link => {
     });
 });
 
-// EmailJS setup
-const apiKey = process.env.APIKEY; // Use the environment variable for EmailJS API Key
-emailjs.init(apiKey);
+
 
 document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault(); 
-
+    const apiKey = process.env.APIKEY; 
+    emailjs.init(apiKey);
     const name = document.getElementById('name').value;
     const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
@@ -177,7 +176,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         message: message,
     };
 
-    emailjs.send(process.env.SERVICEKEY, process.env.TEMPLATEKEY, templateParams) // Use the environment variables for EmailJS service and template keys
+    emailjs.send(process.env.SERVICEKEY, process.env.TEMPLATEKEY, templateParams) 
         .then(function (response) {
             console.log('SUCCESS!', response.status, response.text);
             document.getElementById('contactForm').reset();

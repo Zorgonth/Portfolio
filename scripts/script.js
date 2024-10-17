@@ -57,6 +57,12 @@ document.addEventListener('DOMContentLoaded', function() {
             .filter(line => line.trim() !== '')
             .slice(1, 8)
             .join('<br>');
+        } else if (repo.name === "Inception") {
+          description = readmeContent
+          .split('\n')
+          .filter(line => line.trim() !== '')
+          .slice(13, 14)
+          .join('<br')
         } else {
           description = readmeContent
             .split('\n')
@@ -64,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
             .slice(1, 2)
             .join(' ');
         }
-  
         return { repo, description };
       })
       .catch(error => {

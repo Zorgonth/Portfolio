@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
           description = readmeContent
           .split('\n')
           .filter(line => line.trim() !== '')
-          .slice(13, 14)
+          .slice(12, 14)
           .join('<br')
         } else {
           description = readmeContent

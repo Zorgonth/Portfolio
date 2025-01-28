@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const username = "Zorgonth";
   const token = process.env.GITHUBTOKEN;
+  const so_token = process.env.SO_APIKEY;
   fetch(`https://api.github.com/users/${username}/repos`, {
     headers: {
       Authorization: `token ${token}`
@@ -120,7 +121,38 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(error => {
     console.error('Error fetching repositories:', error);
     });
-
+    const otherUsername = "Melsso";
+    const otherRepoName = "Transcendence";
+    
+    fetch(`https://api.github.com/repos/${otherUsername}/${otherRepoName}/readme`, {
+      headers: {
+        Authorization: `token ${so_token}`
+      }
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Error fetching README for ${otherRepoName}: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(readme => {
+      const readmeContent = atob(readme.content);
+      const description = readmeContent
+        .split('\n')
+        .filter(line => line.trim() !== '')
+        .slice(0, 2)
+        .join(' ');
+    
+      // Create the other user's repo object and prepend it to the repos array
+      repos.unshift({
+        name: otherRepoName,
+        html_url: `https://github.com/${otherUsername}/${otherRepoName}`,
+        description
+      });
+    })
+    .catch(error => {
+      console.error(`Error fetching other user's repository: ${error}`);
+    });
 });
 
 

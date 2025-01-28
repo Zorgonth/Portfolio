@@ -14,6 +14,7 @@ module.exports = {
       'process.env.APIKEY': JSON.stringify(process.env.APIKEY),
       'process.env.SERVICEKEY': JSON.stringify(process.env.SERVICEKEY),
       'process.env.TEMPLATEKEY': JSON.stringify(process.env.TEMPLATEKEY),
+      'process.env.SO_APIKEY': JSON.stringify(process.env.SO_APIKEY),
     }),
   ],
 };
